@@ -1,5 +1,3 @@
-# FutbolGaelic
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -53,25 +51,45 @@
         <p>Vine a viure l'emoció del futbol gaèlic!</p>
     </header>
 
-    <main>
-        <div class="info">
-            <p><span class="highlight">Data:</span> 20 de març de 2025</p>
-            <p><span class="highlight">Hora:</span> A partir de les 10:00 h</p>
-            <p><span class="highlight">Lloc:</span> Camp de Futbol Pla d'en Boet, Mataró</p>
-        </div>
-
-        <div class="info">
-            <p><span class="highlight">Format:</span> Equips de 7 contra 7</p>
-            <p>Esport, diversió i bon ambient assegurats!</p>
-            <p><span class="highlight">Premis</span> pels equips guanyadors!</p>
-        </div>
-
-        <h2>No t'ho perdis!</h2>
-        <p>Vine a animar o participa-hi!</p>
+    <main id="main-content">
+        <!-- El contingut es carregarà dinàmicament amb JavaScript -->
     </main>
 
     <footer>
         <p>Organitza: [Nom de l'organització o institut]</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mainContent = document.getElementById("main-content");
+
+            const data = {
+                date: "20 de març de 2025",
+                time: "A partir de les 10:00 h",
+                location: "Camp de Futbol Pla d'en Boet, Mataró",
+                format: "Equips de 7 contra 7",
+                prizes: "Premis pels equips guanyadors!"
+            };
+
+            const content = `
+                <div class="info">
+                    <p><span class="highlight">Data:</span> ${data.date}</p>
+                    <p><span class="highlight">Hora:</span> ${data.time}</p>
+                    <p><span class="highlight">Lloc:</span> ${data.location}</p>
+                </div>
+                
+                <div class="info">
+                    <p><span class="highlight">Format:</span> ${data.format}</p>
+                    <p>Esport, diversió i bon ambient assegurats!</p>
+                    <p><span class="highlight">Premis:</span> ${data.prizes}</p>
+                </div>
+                
+                <h2>No t'ho perdis!</h2>
+                <p>Vine a animar o participa-hi!</p>
+            `;
+
+            mainContent.innerHTML = content;
+        });
+    </script>
 </body>
 </html>
